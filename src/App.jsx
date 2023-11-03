@@ -10,6 +10,8 @@ function App() {
   const [isCopied, setIsCopied] = useState(false);
   //console.log(value);
 
+  //map iterates the entire array. We should optimize using a loop that is able to stop when it gets the first 20 matches
+  // ==> using for istance for(){ // use break to stop the loop}
   const arrayEmojis = emojis
     .map((elem) => {
       const { title, symbol } = elem;
@@ -38,7 +40,7 @@ function App() {
   const handleCopyClick = (symbol) => {
     copyTextToClipboard(symbol)
       .then(() => {
-        //To display a message to confim the element has been copied (TO DO)
+        //To display a message to confim the element has been copied (TO DO - out of exercice scope...)
         setIsCopied(true);
         setTimeout(() => {
           setIsCopied(false);
