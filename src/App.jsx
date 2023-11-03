@@ -38,6 +38,7 @@ function App() {
   const handleCopyClick = (symbol) => {
     copyTextToClipboard(symbol)
       .then(() => {
+        //To display a message to confim the element has been copied (TO DO)
         setIsCopied(true);
         setTimeout(() => {
           setIsCopied(false);
